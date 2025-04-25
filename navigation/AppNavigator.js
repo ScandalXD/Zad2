@@ -19,7 +19,7 @@ export default function AppNavigator({ isLoggedIn, setIsLoggedIn, setUserEmail }
               <LoginScreen
                 {...props}
                 setIsLoggedIn={setIsLoggedIn}
-                setUserEmail={setUserEmail} // 👈 передаём сюда
+                setUserEmail={setUserEmail} 
               />
             )}
           </Stack.Screen>

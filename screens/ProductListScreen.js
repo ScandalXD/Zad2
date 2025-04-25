@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Button, StyleSheet } from 'react-native';
+import { View, Button } from 'react-native';
 import ShoppingList from '../components/ShoppingList';
 import { ProductsContext } from '../context/ProductsContext';
 import { styles } from '../style/styles';

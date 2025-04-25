@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionList, View, Text, Button, TouchableOpacity } from 'react-native';
+import { SectionList, View, Text, Button, TouchableOpacity, Image } from 'react-native';
 import { styles } from '../style/styles';
 
 const ShoppingList = ({ products, onDelete, onToggleBought, onPressItem }) => {
@@ -28,10 +28,16 @@ const ShoppingList = ({ products, onDelete, onToggleBought, onPressItem }) => {
         return (
           <View style={styles.item}>
             <View style={styles.itemRow}>
-              <TouchableOpacity onPress={() => onPressItem(item)}>
+              {/* Миниатюра товара, если есть изображение */}
+              {item.image ? (
+                <Image source={{ uri: item.image }} style={styles.itemImage} />
+              ) : null}
+
+              <TouchableOpacity onPress={() => onPressItem(item)} style={styles.itemInfo}>
                 <Text style={item.bought ? styles.bought : styles.name}>{item.name}</Text>
                 <Text style={styles.details}>{item.price} zł - {item.store}</Text>
               </TouchableOpacity>
+
               <Button title="Usuń" onPress={() => onDelete(index)} />
             </View>
           </View>

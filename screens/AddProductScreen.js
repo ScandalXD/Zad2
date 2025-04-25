@@ -1,9 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { View, TextInput, Button, StyleSheet, Image, Alert, ScrollView } from 'react-native';
+import { View, TextInput, Button, Image, Alert, ScrollView } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { ProductsContext } from '../context/ProductsContext';
 import { styles } from '../style/styles';
-
 
 export default function AddProductScreen({ navigation }) {
   const { addProduct } = useContext(ProductsContext);
@@ -35,11 +34,19 @@ export default function AddProductScreen({ navigation }) {
   };
 
   const handleAdd = () => {
+    const parsedPrice = parseFloat(product.price);
+
     if (!product.name || !product.price || !product.store) {
       Alert.alert('Wypełnij wymagane pola');
       return;
     }
-    addProduct({ ...product, price: parseFloat(product.price) });
+
+    if (isNaN(parsedPrice)) {
+      Alert.alert('Cena musi być liczbą!');
+      return;
+    }
+
+    addProduct({ ...product, price: parsedPrice });
     navigation.goBack();
   };
 
@@ -82,5 +89,3 @@ export default function AddProductScreen({ navigation }) {
     </ScrollView>
   );
 }
-
-

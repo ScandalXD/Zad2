@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  // 🔹 Список / общие
   container: {
     flex: 1,
     paddingTop: 40,
@@ -48,21 +47,18 @@ export const styles = StyleSheet.create({
     color: '#666',
   },
 
-  // 🔹 Модальные окна
   modal: {
     flex: 1,
     padding: 20,
     justifyContent: 'center',
   },
 
-  // 🔹 Кнопки
   buttonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 10,
   },
 
-  // 🔹 Поля ввода
   input: {
     borderColor: '#aaa',
     borderWidth: 1,
@@ -71,7 +67,6 @@ export const styles = StyleSheet.create({
     padding: 10,
   },
 
-  // 🔹 Авторизация
   authFlex: {
     flex: 1,
   },
@@ -98,7 +93,6 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  // 🔹 Детали продукта
   detailsTitle: {
     fontSize: 24,
     fontWeight: 'bold',
@@ -110,6 +104,7 @@ export const styles = StyleSheet.create({
     height: 250,
     marginBottom: 20,
     borderRadius: 10,
+    alignSelf: 'center',
   },
   detailsText: {
     fontSize: 16,
@@ -117,11 +112,21 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  // 🔹 Изображение (добавление товара)
   imagePreview: {
     width: '100%',
     height: 200,
     marginBottom: 10,
     borderRadius: 10,
   },
+
+  itemImage: {
+    width: 50,
+    height: 50,
+    marginRight: 10,
+    borderRadius: 6,
+  },
+  itemInfo: {
+    flex: 1,
+  },
+  
 });
