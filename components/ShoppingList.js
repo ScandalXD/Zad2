@@ -28,7 +28,6 @@ const ShoppingList = ({ products, onDelete, onToggleBought, onPressItem }) => {
         return (
           <View style={styles.item}>
             <View style={styles.itemRow}>
-              {/* Миниатюра товара, если есть изображение */}
               {item.image ? (
                 <Image source={{ uri: item.image }} style={styles.itemImage} />
               ) : null}
